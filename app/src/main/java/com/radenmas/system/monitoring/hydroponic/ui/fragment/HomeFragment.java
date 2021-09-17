@@ -1,4 +1,4 @@
-package com.radenmas.hydroponicmonitoringsystem.ui.fragment;
+package com.radenmas.system.monitoring.hydroponic.ui.fragment;
 
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -16,8 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.radenmas.hydroponicmonitoringsystem.R;
-import com.radenmas.hydroponicmonitoringsystem.adapter.DataRecycler;
+import com.radenmas.system.R;
+import com.radenmas.system.monitoring.hydroponic.adapter.DataRecycler;
 
 import org.jetbrains.annotations.NotNull;
 

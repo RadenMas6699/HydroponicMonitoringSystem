@@ -1,4 +1,4 @@
-package com.radenmas.hydroponicmonitoringsystem.ui.activity;
+package com.radenmas.system.monitoring.hydroponic.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.radenmas.hydroponicmonitoringsystem.R;
+import com.radenmas.system.R;
 
 public class SplashActivity extends AppCompatActivity {
 

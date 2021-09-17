@@ -1,4 +1,4 @@
-package com.radenmas.hydroponicmonitoringsystem.ui.activity;
+package com.radenmas.system.monitoring.hydroponic.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,9 +7,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.radenmas.hydroponicmonitoringsystem.R;
-import com.radenmas.hydroponicmonitoringsystem.ui.fragment.HomeFragment;
-import com.radenmas.hydroponicmonitoringsystem.ui.fragment.InfoFragment;
+import com.radenmas.system.R;
+import com.radenmas.system.monitoring.hydroponic.ui.fragment.HistoryFragment;
+import com.radenmas.system.monitoring.hydroponic.ui.fragment.HomeFragment;
+import com.radenmas.system.monitoring.hydroponic.ui.fragment.InfoFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     title = "Monitoring Status";
                     break;
                 case R.id.menu_history:
-                    selectedFragment = new InfoFragment();
+                    selectedFragment = new HistoryFragment();
                     title = "History";
                     break;
                 case R.id.menu_info:

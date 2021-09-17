@@ -1,4 +1,4 @@
-package com.radenmas.hydroponicmonitoringsystem;
+package com.radenmas.system;
 
 import org.junit.Test;
 

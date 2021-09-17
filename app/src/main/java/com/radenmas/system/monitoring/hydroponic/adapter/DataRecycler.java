@@ -1,4 +1,4 @@
-package com.radenmas.hydroponicmonitoringsystem.adapter;
+package com.radenmas.system.monitoring.hydroponic.adapter;
 
 public class DataRecycler {
 
