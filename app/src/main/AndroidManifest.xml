@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HydroponicMonitoringSystem">
-        <activity android:name=".monitoring.hydroponic.ui.activity.MainActivity" />
-        <activity android:name=".monitoring.hydroponic.ui.activity.SplashActivity"
-            android:exported="true">
+        <activity
+            android:name=".monitoring.hydroponic.ui.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".monitoring.hydroponic.ui.activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.radenmas.system.R;
-import com.radenmas.system.monitoring.hydroponic.adapter.DataRecycler;
+import com.radenmas.system.monitoring.hydroponic.adapter.DataPoints;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    DataRecycler data = dataSnapshot.getValue(DataRecycler.class);
+                    DataPoints data = dataSnapshot.getValue(DataPoints.class);
 
                     Calendar cal = Calendar.getInstance(Locale.ENGLISH);
                     cal.setTimeInMillis(data.getTime() * 1000);

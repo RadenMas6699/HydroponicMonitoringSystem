@@ -19,8 +19,6 @@ public class HistoryFragment extends Fragment {
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
     private int[] layouts;
-    private int statusSortir = 0;
-    private TextView tvDay, tvWeek, tvMonth;
 
     public HistoryFragment() {
     }
@@ -32,9 +30,6 @@ public class HistoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
         initView(view);
-        onClick();
-
-        selectTextView(tvDay, tvWeek, tvMonth);
 
         // layout xml slide 1 sampai 5
         layouts = new int[]{
@@ -75,19 +70,18 @@ public class HistoryFragment extends Fragment {
 
     //  viewpager change listener
     final ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+
         @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        public void onPageSelected(int position) {
             addBottomDots(position);
         }
 
         @Override
-        public void onPageSelected(int position) {
-
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
         }
 
         @Override
-        public void onPageScrollStateChanged(int state) {
-
+        public void onPageScrollStateChanged(int arg0) {
         }
     };
 
@@ -125,37 +119,9 @@ public class HistoryFragment extends Fragment {
         }
     }
 
-    private void onClick() {
-        tvDay.setOnClickListener(view -> {
-            statusSortir = 0;
-            selectTextView(tvDay, tvWeek, tvMonth);
-        });
-        tvWeek.setOnClickListener(view -> {
-            statusSortir = 1;
-            selectTextView(tvWeek, tvDay, tvMonth);
-        });
-        tvMonth.setOnClickListener(view -> {
-            statusSortir = 2;
-            selectTextView(tvMonth, tvWeek, tvDay);
-        });
-    }
 
     private void initView(View view) {
-        tvDay = view.findViewById(R.id.tv_day);
-        tvWeek = view.findViewById(R.id.tv_week);
-        tvMonth = view.findViewById(R.id.tv_month);
-
         viewPager = view.findViewById(R.id.vp_chart);
         dotsLayout = view.findViewById(R.id.layout_dots);
-    }
-
-    private void selectTextView(TextView tvSelected, TextView tvUnselected1, TextView tvUnselected2) {
-        tvSelected.setBackground(getResources().getDrawable(R.drawable.bg_btn_selected));
-        tvUnselected1.setBackground(getResources().getDrawable(R.drawable.bg_btn_unselected));
-        tvUnselected2.setBackground(getResources().getDrawable(R.drawable.bg_btn_unselected));
-
-        tvSelected.setTextColor(getResources().getColor(R.color.green_strong));
-        tvUnselected1.setTextColor(getResources().getColor(android.R.color.darker_gray));
-        tvUnselected2.setTextColor(getResources().getColor(android.R.color.darker_gray));
     }
 }
