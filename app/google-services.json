@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "118063219589",
+    "firebase_url": "https://hydroponicsystemcarlos-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "hydroponicsystemcarlos",
+    "storage_bucket": "hydroponicsystemcarlos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118063219589:android:57c2fa1c6117e7b91ebaec",
+        "android_client_info": {
+          "package_name": "com.radenmas.hydroponic_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118063219589-57ifi4gauferq3da0vbviu54v3cu1qom.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radenmas.hydroponic_system",
+            "certificate_hash": "a87a695aeb36b8cbcdb329765942f8e3a7344609"
+          }
+        },
+        {
+          "client_id": "118063219589-9uptog587bc884ne4sm163l528lgltbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo4SItkc2A2sfflQKTA4MuVvqlsaN5COA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118063219589-9uptog587bc884ne4sm163l528lgltbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118063219589:android:2356c7c557b2fecb1ebaec",
+        "android_client_info": {
+          "package_name": "com.radenmas.hydroponicmonitoringsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118063219589-9uptog587bc884ne4sm163l528lgltbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo4SItkc2A2sfflQKTA4MuVvqlsaN5COA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118063219589-9uptog587bc884ne4sm163l528lgltbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
