@@ -2,6 +2,7 @@ package com.radenmas.system.monitoring.hydroponic.ui.fragment;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,9 @@ import com.radenmas.system.monitoring.hydroponic.adapter.MyMarkerView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class ChartTemp extends Fragment {
@@ -43,6 +46,14 @@ public class ChartTemp extends Fragment {
 
     private int statusSortir = 0;
     private TextView tvDay, tvWeek, tvMonth;
+
+    // day 1440
+    // week 10080
+    // month 43200
+
+    private int day = 14;
+    private int week = 100;
+    private int month = 432;
 
     public ChartTemp() {
         // Required empty public constructor
@@ -59,7 +70,18 @@ public class ChartTemp extends Fragment {
 
         selectTextView(tvDay, tvWeek, tvMonth);
 
-        Graph(144);
+        switch (statusSortir){
+            case 0:
+                Graph(day);
+                break;
+            case 1:
+                Graph(week);
+                break;
+            case 2:
+                Graph(month);
+                break;
+        }
+
         chart.getDescription().setEnabled(false);
         chart.setNoDataText(getString(R.string.app_name));
         chart.setNoDataTextColor(getResources().getColor(R.color.dark_icon));
@@ -72,14 +94,50 @@ public class ChartTemp extends Fragment {
         tvDay.setOnClickListener(view -> {
             statusSortir = 0;
             selectTextView(tvDay, tvWeek, tvMonth);
+            switch (statusSortir){
+                case 0:
+                    Graph(day);
+                    break;
+                case 1:
+                    Graph(week);
+                    break;
+                case 2:
+                    Graph(month);
+                    break;
+            }
+            chart.invalidate();
         });
         tvWeek.setOnClickListener(view -> {
             statusSortir = 1;
             selectTextView(tvWeek, tvDay, tvMonth);
+            switch (statusSortir){
+                case 0:
+                    Graph(day);
+                    break;
+                case 1:
+                    Graph(week);
+                    break;
+                case 2:
+                    Graph(month);
+                    break;
+            }
+            chart.invalidate();
         });
         tvMonth.setOnClickListener(view -> {
             statusSortir = 2;
             selectTextView(tvMonth, tvWeek, tvDay);
+            switch (statusSortir){
+                case 0:
+                    Graph(day);
+                    break;
+                case 1:
+                    Graph(week);
+                    break;
+                case 2:
+                    Graph(month);
+                    break;
+            }
+            chart.invalidate();
         });
     }
 
@@ -138,36 +196,74 @@ public class ChartTemp extends Fragment {
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setDrawGridLines(false);
-        xAxis.setLabelRotationAngle(0f);//45
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawAxisLine(false);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setTextSize(10f);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM_INSIDE);
         xAxis.setGranularity(1f);
-        xAxis.setDrawLabels(false);
-        xAxis.setLabelCount(3, true);
-        xAxis.setValueFormatter(new ValueFormatter() {
-            @Override
-            public String getFormattedValue(float value) {
-                Date date = new Date((long) value);
-                SimpleDateFormat fmt;
-                fmt = new SimpleDateFormat("HH:mm zz");
-                fmt.setTimeZone(TimeZone.getDefault());
-                String s = fmt.format(date);
-                return s;
-            }
-        });
+        xAxis.setDrawLabels(true);
+
+        switch (statusSortir) {
+            case 0: // hari
+                xAxis.setLabelRotationAngle(0f);//45
+                xAxis.setLabelCount(7, true);
+                xAxis.setValueFormatter(new ValueFormatter() {
+                    @Override
+                    public String getFormattedValue(float value) {
+                        long longtime = (long) value;
+                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        cal.setTimeInMillis(longtime * 1000);
+                        String s = DateFormat.format("HH:mm", cal).toString();
+                        return s;
+                    }
+                });
+                chart.invalidate();
+                break;
+            case 1: // minggu
+                xAxis.setLabelRotationAngle(0f);//45
+                xAxis.setLabelCount(8, true);
+                xAxis.setValueFormatter(new ValueFormatter() {
+                    @Override
+                    public String getFormattedValue(float value) {
+                        long longtime = (long) value;
+                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        cal.setTimeInMillis(longtime * 1000);
+                        String s = DateFormat.format("dd MMM", cal).toString();
+                        return s;
+                    }
+                });
+                chart.invalidate();
+                break;
+            case 2: // bulan
+                xAxis.setLabelRotationAngle(-45f);//45
+                xAxis.setLabelCount(17, true);
+                xAxis.setValueFormatter(new ValueFormatter() {
+                    @Override
+                    public String getFormattedValue(float value) {
+                        long longtime = (long) value;
+                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        cal.setTimeInMillis(longtime * 1000);
+                        String s = DateFormat.format("dd MMM", cal).toString();
+                        return s;
+                    }
+                });
+                chart.invalidate();
+                break;
+        }
 
         YAxis yAxisL = chart.getAxis(YAxis.AxisDependency.LEFT);
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(false);
-        yAxisL.setAxisMinimum(15);
-        yAxisL.setAxisMaximum(45);
+//        yAxisL.setAxisMinimum(15);
+//        yAxisL.setAxisMaximum(45);
 
         MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
         mv.setChartView(chart);
         chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
-//        chart.getAxisRight().setEnabled(false);
-//        chart.getAxisLeft().setEnabled(false);
+        chart.getAxisRight().setEnabled(false);
+        chart.getAxisLeft().setEnabled(false);
 //        chart.getXAxis().setEnabled(false);
         chart.notifyDataSetChanged();
         chart.clear();

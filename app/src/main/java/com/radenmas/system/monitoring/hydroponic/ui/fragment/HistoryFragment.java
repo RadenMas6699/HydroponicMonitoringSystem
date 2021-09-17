@@ -1,6 +1,5 @@
 package com.radenmas.system.monitoring.hydroponic.ui.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -10,10 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.radenmas.system.R;
+import com.radenmas.system.monitoring.hydroponic.adapter.MyPagerAdapter;
 
 public class HistoryFragment extends Fragment {
     private ViewPager viewPager;
@@ -42,8 +41,7 @@ public class HistoryFragment extends Fragment {
         // tombol dots (lingkaran kecil perpindahan slide)
         addBottomDots(0);
 
-        MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter();
-        viewPager.setAdapter(myViewPagerAdapter);
+        viewPager.setAdapter(new MyPagerAdapter(getFragmentManager()));
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
         return view;
@@ -84,41 +82,6 @@ public class HistoryFragment extends Fragment {
         public void onPageScrollStateChanged(int arg0) {
         }
     };
-
-    public class MyViewPagerAdapter extends PagerAdapter {
-
-        public MyViewPagerAdapter() {
-        }
-
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-            View view = layoutInflater.inflate(layouts[position], container, false);
-            container.addView(view);
-
-            return view;
-        }
-
-        @Override
-        public int getCount() {
-            return layouts.length;
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object obj) {
-            return view == obj;
-        }
-
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            View view = (View) object;
-            container.removeView(view);
-        }
-    }
-
 
     private void initView(View view) {
         viewPager = view.findViewById(R.id.vp_chart);
