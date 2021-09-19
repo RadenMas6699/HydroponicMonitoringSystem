@@ -15,4 +15,7 @@
     <string name="tds">TDS</string>
     <string name="water">Water</string>
     <string name="ph">PH</string>
+    <string name="bad">Buruk</string>
+    <string name="medium">Sedang</string>
+    <string name="good">Baik</string>
 </resources>

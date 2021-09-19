@@ -43,9 +43,7 @@
 
                     <TextView
                         android:id="@+id/status_temperature"
-                        style="@style/status_item"
-                        android:background="@drawable/bg_good_status"
-                        android:text="Baik" />
+                        style="@style/status_item" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -76,9 +74,7 @@
 
                     <TextView
                         android:id="@+id/status_humidity"
-                        style="@style/status_item"
-                        android:background="@drawable/bg_good_status"
-                        android:text="Baik" />
+                        style="@style/status_item" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -117,9 +113,7 @@
 
                     <TextView
                         android:id="@+id/status_ph"
-                        style="@style/status_item"
-                        android:background="@drawable/bg_medium_status"
-                        android:text="Sedang" />
+                        style="@style/status_item" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -150,9 +144,7 @@
 
                     <TextView
                         android:id="@+id/status_tds"
-                        style="@style/status_item"
-                        android:background="@drawable/bg_good_status"
-                        android:text="Baik" />
+                        style="@style/status_item"/>
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -191,9 +183,7 @@
 
                     <TextView
                         android:id="@+id/status_water"
-                        style="@style/status_item"
-                        android:background="@drawable/bg_good_status"
-                        android:text="Baik" />
+                        style="@style/status_item"/>
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>

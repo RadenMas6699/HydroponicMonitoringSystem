@@ -13,7 +13,6 @@
         android:id="@+id/tvValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="56"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/black"
         android:textSize="12sp" />
@@ -25,6 +24,5 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/black"
         android:textSize="10sp"
-        android:text="09:36"
         tools:ignore="SmallSp" />
 </LinearLayout>

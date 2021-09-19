@@ -19,8 +19,6 @@ import java.util.Locale;
 
 @SuppressLint("ViewConstructor")
 public class MyMarkerView extends MarkerView {
-//
-//    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm zz", Locale.getDefault());
     private final TextView tvValue, tvTime;
 
     public MyMarkerView(Context context, int layoutResource) {
@@ -34,16 +32,13 @@ public class MyMarkerView extends MarkerView {
     public void refreshContent(Entry e, Highlight highlight) {
 
         if (e instanceof CandleEntry) {
-
-//            long longtime = (long) e.getX();
-//            Calendar cal = Calendar.getInstance(Locale.ENGLISH);
-//            cal.setTimeInMillis(longtime * 1000);
-//            String s = DateFormat.format("HH:mm zz", cal).toString();
-//
-//            CandleEntry ce = (CandleEntry) e;
-////            String jam = sdf.format(e.getX());
-//            tvTime.setText(s);
-//            tvValue.setText(Utils.formatNumber(ce.getHigh(), 0, true));
+            CandleEntry ce = (CandleEntry) e;
+            long longtime = (long) e.getX();
+            Calendar cal = Calendar.getInstance(Locale.getDefault());
+            cal.setTimeInMillis(longtime * 1000);
+            String s = DateFormat.format("HH:mm zz", cal).toString();
+            tvTime.setText(s);
+            tvValue.setText(Utils.formatNumber(ce.getHigh(), 0, true));
         } else {
             long longtime = (long) e.getX();
             Calendar cal = Calendar.getInstance(Locale.ENGLISH);

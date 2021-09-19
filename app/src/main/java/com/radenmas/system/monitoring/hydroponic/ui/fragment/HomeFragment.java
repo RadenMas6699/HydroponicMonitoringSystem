@@ -77,6 +77,19 @@ public class HomeFragment extends Fragment {
                     valueWater.setText("" + data.getTempAir() + "\u2103");
                     valuePH.setText(koma.format(data.getPhAir()));
 
+                    float temp, hum, ph, tds, wtr;
+                    temp = data.getTempRuang();
+                    hum = data.getHumRuang();
+                    ph = data.getPhAir();
+                    tds = data.getTdsAir();
+                    wtr = data.getTempAir();
+
+                    //sedang //baik //sedang //buruk
+                    setStatus(temp, 0, 15, 35, 50, statusTemperature);
+                    setStatus(hum, 0, 25, 75, 100, statusHumidity);
+                    setStatus(ph, 6, 6.5, 7.5, 8, statusPH);
+                    setStatus(tds, 0, 500, 2500, 3000, statusTDS);
+                    setStatus(wtr, 0, 15, 35, 50, statusWater);
                 }
             }
 
@@ -85,6 +98,26 @@ public class HomeFragment extends Fragment {
 
             }
         });
+    }
+
+    public void setStatus(float value, double i, double j, double k, double l, TextView status) {
+        if (value > i && value <= j) {
+            //medium
+            status.setBackground(getResources().getDrawable(R.drawable.bg_medium_status));
+            status.setText(R.string.medium);
+        } else if (value > j && value <= k) {
+            //baik
+            status.setBackground(getResources().getDrawable(R.drawable.bg_good_status));
+            status.setText(R.string.good);
+        } else if (value > k && value <= l) {
+            //medium
+            status.setBackground(getResources().getDrawable(R.drawable.bg_medium_status));
+            status.setText(R.string.medium);
+        } else {
+            //buruk
+            status.setBackground(getResources().getDrawable(R.drawable.bg_bad_status));
+            status.setText(R.string.bad);
+        }
     }
 
     private void initView(View view) {

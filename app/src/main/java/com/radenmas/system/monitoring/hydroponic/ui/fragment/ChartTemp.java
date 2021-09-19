@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -32,12 +31,9 @@ import com.radenmas.system.R;
 import com.radenmas.system.monitoring.hydroponic.adapter.DataPoints;
 import com.radenmas.system.monitoring.hydroponic.adapter.MyMarkerView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 public class ChartTemp extends Fragment {
     LineChart chart;
@@ -52,7 +48,6 @@ public class ChartTemp extends Fragment {
     // week 10080
     // month 43200
 
-
     private int day = 144;
     private int week = 1008;
     private int month = 4320;
@@ -65,7 +60,7 @@ public class ChartTemp extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_chart_temp, container, false);
+        View view = inflater.inflate(R.layout.fragment_chart, container, false);
 
         initView(view);
         onClick();
@@ -266,7 +261,6 @@ public class ChartTemp extends Fragment {
         chart.getDescription().setEnabled(false);
         chart.getAxisRight().setEnabled(false);
         chart.getAxisLeft().setEnabled(false);
-//        chart.getXAxis().setEnabled(false);
         chart.notifyDataSetChanged();
         chart.clear();
         chart.setData(lineData);
