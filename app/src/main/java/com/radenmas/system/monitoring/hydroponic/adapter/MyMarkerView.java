@@ -2,6 +2,7 @@ package com.radenmas.system.monitoring.hydroponic.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.components.MarkerView;
@@ -13,12 +14,13 @@ import com.github.mikephil.charting.utils.Utils;
 import com.radenmas.system.R;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 @SuppressLint("ViewConstructor")
 public class MyMarkerView extends MarkerView {
-
-    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm zz", Locale.getDefault());
+//
+//    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm zz", Locale.getDefault());
     private final TextView tvValue, tvTime;
 
     public MyMarkerView(Context context, int layoutResource) {
@@ -32,14 +34,22 @@ public class MyMarkerView extends MarkerView {
     public void refreshContent(Entry e, Highlight highlight) {
 
         if (e instanceof CandleEntry) {
-            CandleEntry ce = (CandleEntry) e;
-            String jam = sdf.format(e.getX());
-            tvTime.setText(jam);
-            tvValue.setText(Utils.formatNumber(ce.getHigh(), 0, true));
+
+//            long longtime = (long) e.getX();
+//            Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+//            cal.setTimeInMillis(longtime * 1000);
+//            String s = DateFormat.format("HH:mm zz", cal).toString();
+//
+//            CandleEntry ce = (CandleEntry) e;
+////            String jam = sdf.format(e.getX());
+//            tvTime.setText(s);
+//            tvValue.setText(Utils.formatNumber(ce.getHigh(), 0, true));
         } else {
-//            float time = e.getX();
-            String jam = sdf.format(e.getX());
-            tvTime.setText(jam);
+            long longtime = (long) e.getX();
+            Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+            cal.setTimeInMillis(longtime * 1000);
+            String s = DateFormat.format("HH:mm zz", cal).toString();
+            tvTime.setText(s);
             tvValue.setText(Utils.formatNumber(e.getY(), 0, true));
         }
 
