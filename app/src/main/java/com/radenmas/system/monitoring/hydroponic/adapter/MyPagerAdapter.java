@@ -6,7 +6,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.ChartHum;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.ChartPH;
+import com.radenmas.system.monitoring.hydroponic.ui.fragment.ChartTDS;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.ChartTemp;
+import com.radenmas.system.monitoring.hydroponic.ui.fragment.ChartWater;
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
 
@@ -23,12 +25,16 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
                 return new ChartHum();
             case 2:
                 return new ChartPH();
+            case 3:
+                return new ChartTDS();
+            case 4:
+                return new ChartWater();
         }
         return null;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 5;
     }
 }

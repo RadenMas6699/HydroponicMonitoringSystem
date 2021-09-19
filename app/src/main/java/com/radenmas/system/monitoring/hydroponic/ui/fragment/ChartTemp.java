@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -51,9 +52,9 @@ public class ChartTemp extends Fragment {
     // week 10080
     // month 43200
 
-    private int day = 14;
-    private int week = 100;
-    private int month = 432;
+    private int day = 144;
+    private int week = 1008;
+    private int month = 4320;
 
     public ChartTemp() {
         // Required empty public constructor
@@ -254,8 +255,8 @@ public class ChartTemp extends Fragment {
         YAxis yAxisL = chart.getAxis(YAxis.AxisDependency.LEFT);
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(false);
-//        yAxisL.setAxisMinimum(15);
-//        yAxisL.setAxisMaximum(45);
+        yAxisL.setAxisMinimum(15);
+        yAxisL.setAxisMaximum(45);
 
         MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
         mv.setChartView(chart);

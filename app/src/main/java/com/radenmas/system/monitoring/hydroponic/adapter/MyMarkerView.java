@@ -32,13 +32,13 @@ public class MyMarkerView extends MarkerView {
     public void refreshContent(Entry e, Highlight highlight) {
 
         if (e instanceof CandleEntry) {
-
             CandleEntry ce = (CandleEntry) e;
-
+            String jam = sdf.format(e.getX());
+            tvTime.setText(jam);
             tvValue.setText(Utils.formatNumber(ce.getHigh(), 0, true));
         } else {
-            float time = e.getX();
-            String jam = sdf.format(time);
+//            float time = e.getX();
+            String jam = sdf.format(e.getX());
             tvTime.setText(jam);
             tvValue.setText(Utils.formatNumber(e.getY(), 0, true));
         }

@@ -31,12 +31,12 @@ public class HistoryFragment extends Fragment {
         initView(view);
 
         // layout xml slide 1 sampai 5
-        layouts = new int[]{
-                R.layout.fragment_chart_temp,
-                R.layout.fragment_chart_hum,
-                R.layout.fragment_chart_ph,
-                R.layout.fragment_chart_tds,
-                R.layout.fragment_chart_water};
+//        layouts = new int[]{
+//                R.layout.fragment_chart_temp,
+//                R.layout.fragment_chart_hum,
+//                R.layout.fragment_chart_ph,
+//                R.layout.fragment_chart_tds,
+//                R.layout.fragment_chart_water};
 
         // tombol dots (lingkaran kecil perpindahan slide)
         addBottomDots(0);
@@ -48,13 +48,14 @@ public class HistoryFragment extends Fragment {
     }
 
     private void addBottomDots(int currentPage) {
-        TextView[] dots = new TextView[layouts.length];
+        TextView[] dots = new TextView[5];
 
         int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
         int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
 
         dotsLayout.removeAllViews();
-        for (int i = 0; i < dots.length; i++) {
+//        for (int i = 0; i < dots.length; i++) {
+        for (int i = 0; i < 5; i++) {
             dots[i] = new TextView(getContext());
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
