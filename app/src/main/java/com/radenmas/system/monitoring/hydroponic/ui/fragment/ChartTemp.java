@@ -52,6 +52,7 @@ public class ChartTemp extends Fragment {
     // week 10080
     // month 43200
 
+
     private int day = 144;
     private int week = 1008;
     private int month = 4320;
