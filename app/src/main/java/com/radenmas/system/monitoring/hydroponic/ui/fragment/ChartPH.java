@@ -48,9 +48,9 @@ public class ChartPH extends Fragment {
     // week 10080
     // month 43200
 
-    private int day = 144;
-    private int week = 1008;
-    private int month = 4320;
+    private int day = 1440;
+    private int week = 10080;
+    private int month = 43200;
 
     public ChartPH() {
         // Required empty public constructor
@@ -251,7 +251,7 @@ public class ChartPH extends Fragment {
         YAxis yAxisL = chart.getAxis(YAxis.AxisDependency.LEFT);
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(false);
-        yAxisL.setAxisMinimum(2);
+        yAxisL.setAxisMinimum(0);
         yAxisL.setAxisMaximum(9);
 
         MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);

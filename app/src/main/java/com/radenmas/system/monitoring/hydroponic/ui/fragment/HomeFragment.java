@@ -84,12 +84,12 @@ public class HomeFragment extends Fragment {
                     tds = data.getTdsAir();
                     wtr = data.getTempAir();
 
-                    //sedang //baik //sedang //buruk
-                    setStatus(temp, 0, 15, 35, 50, statusTemperature);
-                    setStatus(hum, 0, 25, 75, 100, statusHumidity);
-                    setStatus(ph, 6, 6.5, 7.5, 8, statusPH);
-                    setStatus(tds, 0, 500, 2500, 3000, statusTDS);
-                    setStatus(wtr, 0, 15, 35, 50, statusWater);
+                    //buruk //baik //sedang //buruk
+                    setStatus(temp, 0, 20, 35, 37, 40, statusTemperature);
+                    setStatus(hum, 0, 70, 90, 96, 100, statusHumidity);
+                    setStatus(ph, 0, 5.5, 7.1, 8.1, 9, statusPH);
+                    setStatus(tds, 0, 100, 501, 1751, 2000, statusTDS);
+                    setStatus(wtr, 0, 18, 26, 28, 37, statusWater);
                 }
             }
 
@@ -100,20 +100,20 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    public void setStatus(float value, double i, double j, double k, double l, TextView status) {
-        if (value > i && value <= j) {
-            //medium
-            status.setBackground(getResources().getDrawable(R.drawable.bg_medium_status));
-            status.setText(R.string.medium);
-        } else if (value > j && value <= k) {
+    public void setStatus(float value, double i, double j, double k, double l, double m, TextView status) {
+        if (value >= i && value < j) {
+            //buruk
+            status.setBackground(getResources().getDrawable(R.drawable.bg_bad_status));
+            status.setText(R.string.bad);
+        } else if (value >= j && value < k) {
             //baik
             status.setBackground(getResources().getDrawable(R.drawable.bg_good_status));
             status.setText(R.string.good);
-        } else if (value > k && value <= l) {
+        } else if (value >= k && value < l) {
             //medium
             status.setBackground(getResources().getDrawable(R.drawable.bg_medium_status));
             status.setText(R.string.medium);
-        } else {
+        } else if (value >= l && value <= m) {
             //buruk
             status.setBackground(getResources().getDrawable(R.drawable.bg_bad_status));
             status.setText(R.string.bad);

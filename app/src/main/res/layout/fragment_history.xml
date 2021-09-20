@@ -20,12 +20,6 @@
             android:gravity="center_horizontal"
             android:textStyle="bold" />
 
-        <!--        <androidx.viewpager.widget.ViewPager-->
-        <!--            android:id="@+id/vp_chart"-->
-        <!--            android:layout_marginBottom="36dp"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent" />-->
-
         <FrameLayout
             android:id="@+id/content_chart"
             android:layout_width="match_parent"
@@ -59,15 +53,4 @@
         android:scaleType="fitXY"
         android:src="@drawable/ic_next_round"
         app:tint="@color/dark_icon" />
-
-    <LinearLayout
-        android:id="@+id/layout_dots"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:orientation="horizontal" />
 </RelativeLayout>

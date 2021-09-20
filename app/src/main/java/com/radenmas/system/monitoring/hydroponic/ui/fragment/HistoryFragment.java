@@ -14,9 +14,6 @@ import androidx.viewpager.widget.ViewPager;
 import com.radenmas.system.R;
 
 public class HistoryFragment extends Fragment {
-    private ViewPager viewPager;
-    private LinearLayout dotsLayout;
-    private int[] layouts;
     TextView nameChart;
     ImageButton btnBackRound, btnNextRound;
 
@@ -59,23 +56,6 @@ public class HistoryFragment extends Fragment {
             }
         });
 
-
-//        count = view.findViewById(R.id.count);
-
-        // layout xml slide 1 sampai 5
-//        layouts = new int[]{
-//                R.layout.fragment_chart_temp,
-//                R.layout.fragment_chart_hum,
-//                R.layout.fragment_chart_ph,
-//                R.layout.fragment_chart_tds,
-//                R.layout.fragment_chart_water};
-
-        // tombol dots (lingkaran kecil perpindahan slide)
-//        addBottomDots(0);
-
-//        viewPager.setAdapter(new MyPagerAdapter(getFragmentManager()));
-//        viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-
         return view;
     }
 
@@ -107,49 +87,7 @@ public class HistoryFragment extends Fragment {
         return;
     }
 
-    //    private void addBottomDots(int currentPage) {
-//        TextView[] dots = new TextView[5];
-//
-//        int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
-//        int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
-//
-//        dotsLayout.removeAllViews();
-////        for (int i = 0; i < dots.length; i++) {
-//        for (int i = 0; i < 5; i++) {
-//            dots[i] = new TextView(getContext());
-//            dots[i].setText(Html.fromHtml("&#8226;"));
-//            dots[i].setTextSize(35);
-//            dots[i].setTextColor(colorsInactive[currentPage]);
-//            dotsLayout.addView(dots[i]);
-//        }
-//
-//        if (dots.length > 0)
-//            dots[currentPage].setTextColor(colorsActive[currentPage]);
-//    }
-//
-    //  viewpager change listener
-//    final ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-//
-//        @Override
-//        public void onPageSelected(int position) {
-////            addBottomDots(position);
-//            count.setText(""+position);
-//        }
-//
-//        @Override
-//        public void onPageScrolled(int arg0, float arg1, int arg2) {
-//
-//        }
-//
-//        @Override
-//        public void onPageScrollStateChanged(int arg0) {
-//            Toast.makeText(getContext(), ""+arg0, Toast.LENGTH_SHORT).show();
-//        }
-//    };
-
     private void initView(View view) {
-//        viewPager = view.findViewById(R.id.vp_chart);
-        dotsLayout = view.findViewById(R.id.layout_dots);
         btnBackRound = view.findViewById(R.id.btn_back_round);
         btnNextRound = view.findViewById(R.id.btn_next_round);
     }
