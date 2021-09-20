@@ -37,7 +37,7 @@ import java.util.Locale;
 
 public class ChartTemp extends Fragment {
     LineChart chart;
-    LineDataSet lineDataSet = new LineDataSet(null,null);
+    LineDataSet lineDataSet = new LineDataSet(null, null);
     ArrayList<ILineDataSet> iLineDataSets = new ArrayList<>();
     LineData lineData;
 
@@ -67,7 +67,7 @@ public class ChartTemp extends Fragment {
 
         selectTextView(tvDay, tvWeek, tvMonth);
 
-        switch (statusSortir){
+        switch (statusSortir) {
             case 0:
                 Graph(day);
                 break;
@@ -80,7 +80,7 @@ public class ChartTemp extends Fragment {
         }
 
         chart.getDescription().setEnabled(false);
-        chart.setNoDataText(getString(R.string.app_name));
+        chart.setNoDataText(getString(R.string.temperature));
         chart.setNoDataTextColor(getResources().getColor(R.color.dark_icon));
         chart.invalidate();
 
@@ -91,7 +91,7 @@ public class ChartTemp extends Fragment {
         tvDay.setOnClickListener(view -> {
             statusSortir = 0;
             selectTextView(tvDay, tvWeek, tvMonth);
-            switch (statusSortir){
+            switch (statusSortir) {
                 case 0:
                     Graph(day);
                     break;
@@ -107,7 +107,7 @@ public class ChartTemp extends Fragment {
         tvWeek.setOnClickListener(view -> {
             statusSortir = 1;
             selectTextView(tvWeek, tvDay, tvMonth);
-            switch (statusSortir){
+            switch (statusSortir) {
                 case 0:
                     Graph(day);
                     break;
@@ -123,7 +123,7 @@ public class ChartTemp extends Fragment {
         tvMonth.setOnClickListener(view -> {
             statusSortir = 2;
             selectTextView(tvMonth, tvWeek, tvDay);
-            switch (statusSortir){
+            switch (statusSortir) {
                 case 0:
                     Graph(day);
                     break;
@@ -265,7 +265,7 @@ public class ChartTemp extends Fragment {
         chart.clear();
         chart.setData(lineData);
         chart.invalidate();
-        chart.moveViewTo(lineData.getEntryCount(),50L, YAxis.AxisDependency.LEFT);
+        chart.moveViewTo(lineData.getEntryCount(), 50L, YAxis.AxisDependency.LEFT);
     }
 
     private void selectTextView(TextView tvSelected, TextView tvUnselected1, TextView tvUnselected2) {

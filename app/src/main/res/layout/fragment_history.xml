@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="85dp">
@@ -11,20 +12,54 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:gravity="center_horizontal"
-            android:text="Grafik Temperature"
+            android:text="Grafik"
             android:textStyle="bold" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/vp_chart"
-            android:layout_marginBottom="36dp"
+        <!--        <androidx.viewpager.widget.ViewPager-->
+        <!--            android:id="@+id/vp_chart"-->
+        <!--            android:layout_marginBottom="36dp"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent" />-->
+
+        <FrameLayout
+            android:id="@+id/content_chart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_back_round"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
+        android:background="@android:color/transparent"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_back_round"
+        app:tint="@color/dark_icon" />
+
+    <ImageButton
+        android:id="@+id/btn_next_round"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="4dp"
+        android:background="@android:color/transparent"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_next_round"
+        app:tint="@color/dark_icon" />
 
     <LinearLayout
         android:id="@+id/layout_dots"
