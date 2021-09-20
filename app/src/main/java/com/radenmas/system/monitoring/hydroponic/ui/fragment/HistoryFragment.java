@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -16,7 +17,7 @@ public class HistoryFragment extends Fragment {
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
     private int[] layouts;
-    //    TextView count;
+    TextView nameChart;
     ImageButton btnBackRound, btnNextRound;
 
     int count = 0;
@@ -31,6 +32,8 @@ public class HistoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
         initView(view);
+        nameChart = view.findViewById(R.id.name_chart);
+        nameChart.setText("Grafik Temperature");
 
         getFragmentManager().beginTransaction().replace(R.id.content_chart, new ChartTemp()).commit();
 
@@ -81,18 +84,23 @@ public class HistoryFragment extends Fragment {
         switch (count) {
             case 0:
                 selectedFragment = new ChartTemp();
+                nameChart.setText("Grafik Temperature");
                 break;
             case 1:
                 selectedFragment = new ChartHum();
+                nameChart.setText("Grafik Humidity");
                 break;
             case 2:
                 selectedFragment = new ChartPH();
+                nameChart.setText("Grafik PH");
                 break;
             case 3:
                 selectedFragment = new ChartTDS();
+                nameChart.setText("Grafik TDS");
                 break;
             case 4:
                 selectedFragment = new ChartWater();
+                nameChart.setText("Grafik Water");
                 break;
         }
         getFragmentManager().beginTransaction().replace(R.id.content_chart, selectedFragment).commit();
