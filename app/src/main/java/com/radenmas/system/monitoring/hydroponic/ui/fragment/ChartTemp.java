@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
@@ -63,8 +64,7 @@ public class ChartTemp extends Fragment {
         initView(view);
         onClick();
 
-        SelectTextView select = new SelectTextView();
-        select.select(tvDay, tvWeek, tvMonth);
+        selectTextView(tvDay, tvWeek, tvMonth);
 
         switch (statusSortir) {
             case 0:
@@ -87,11 +87,9 @@ public class ChartTemp extends Fragment {
     }
 
     private void onClick() {
-        SelectTextView select = new SelectTextView();
-
         tvDay.setOnClickListener(view -> {
             statusSortir = 0;
-            select.select(tvDay, tvWeek, tvMonth);
+            selectTextView(tvDay, tvWeek, tvMonth);
             switch (statusSortir) {
                 case 0:
                     Graph(day);
@@ -107,7 +105,7 @@ public class ChartTemp extends Fragment {
         });
         tvWeek.setOnClickListener(view -> {
             statusSortir = 1;
-            select.select(tvWeek, tvDay, tvMonth);
+            selectTextView(tvWeek, tvDay, tvMonth);
             switch (statusSortir) {
                 case 0:
                     Graph(day);
@@ -123,7 +121,7 @@ public class ChartTemp extends Fragment {
         });
         tvMonth.setOnClickListener(view -> {
             statusSortir = 2;
-            select.select(tvMonth, tvWeek, tvDay);
+            selectTextView(tvMonth, tvWeek, tvDay);
             switch (statusSortir) {
                 case 0:
                     Graph(day);
@@ -191,7 +189,7 @@ public class ChartTemp extends Fragment {
         xAxis.setDrawAxisLine(false);
         xAxis.setCenterAxisLabels(true);
         xAxis.setTextSize(10f);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM_INSIDE);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setGranularity(1f);
         xAxis.setDrawLabels(true);
 
@@ -249,18 +247,28 @@ public class ChartTemp extends Fragment {
         yAxisL.setAxisMinimum(15);
         yAxisL.setAxisMaximum(45);
 
-//        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
+//        MyMarkerView mv = new MyMarkerView(getActivity(), R.layout.custom_marker_view);
 //        mv.setChartView(chart);
 //        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
-        chart.getAxisRight().setEnabled(false);
-        chart.getAxisLeft().setEnabled(false);
+//        chart.getAxisRight().setEnabled(false);
+//        chart.getAxisLeft().setEnabled(false);
         chart.notifyDataSetChanged();
         chart.clear();
         chart.setData(lineData);
         chart.invalidate();
         chart.moveViewTo(lineData.getEntryCount(), 50L, YAxis.AxisDependency.LEFT);
+    }
+
+    private void selectTextView(TextView tvSelected, TextView tvUnselected1, TextView tvUnselected2) {
+        tvSelected.setBackgroundResource(R.drawable.bg_btn_selected);
+        tvUnselected1.setBackgroundResource(R.drawable.bg_btn_unselected);
+        tvUnselected2.setBackgroundResource(R.drawable.bg_btn_unselected);
+
+        tvSelected.setTextColor(getResources().getColor(R.color.green_strong));
+        tvUnselected1.setTextColor(getResources().getColor(android.R.color.darker_gray));
+        tvUnselected2.setTextColor(getResources().getColor(android.R.color.darker_gray));
     }
 
 }

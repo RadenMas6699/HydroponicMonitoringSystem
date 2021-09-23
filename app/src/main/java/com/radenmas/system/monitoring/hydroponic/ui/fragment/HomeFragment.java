@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
                     Calendar cal = Calendar.getInstance(Locale.ENGLISH);
                     cal.setTimeInMillis(data.getTime() * 1000);
 
-                    String clock = DateFormat.format("HH:mm:ss zz", cal).toString();
+                    String clock = DateFormat.format("HH:mm zz", cal).toString();
                     String date = DateFormat.format("dd MMM yyyy", cal).toString();
 
                     valueClock.setText(clock);

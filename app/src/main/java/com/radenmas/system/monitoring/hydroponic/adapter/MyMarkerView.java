@@ -1,6 +1,7 @@
 package com.radenmas.system.monitoring.hydroponic.adapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import java.util.Locale;
 
 @SuppressLint("ViewConstructor")
 public class MyMarkerView extends MarkerView {
-    private final TextView tvValue, tvTime;
+    public final TextView tvValue, tvTime;
 
     public MyMarkerView(Context context, int layoutResource) {
         super(context, layoutResource);

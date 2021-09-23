@@ -14,8 +14,8 @@ public class SelectTextView {
         tvUnselected2.setBackgroundResource(R.drawable.bg_btn_unselected);
 
         tvSelected.setTextColor(R.color.green_strong);
-        tvUnselected1.setTextColor(android.R.color.darker_gray);
-        tvUnselected2.setTextColor(android.R.color.darker_gray);
+        tvUnselected1.setTextColor(R.color.dark_icon);
+        tvUnselected2.setTextColor(R.color.dark_icon);
     }
 
 }

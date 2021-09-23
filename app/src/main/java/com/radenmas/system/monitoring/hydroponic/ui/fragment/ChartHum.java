@@ -190,7 +190,7 @@ public class ChartHum extends Fragment {
         xAxis.setDrawAxisLine(false);
         xAxis.setCenterAxisLabels(true);
         xAxis.setTextSize(10f);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM_INSIDE);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setGranularity(1f);
         xAxis.setDrawLabels(true);
 
@@ -253,8 +253,8 @@ public class ChartHum extends Fragment {
 //        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
-        chart.getAxisRight().setEnabled(false);
-        chart.getAxisLeft().setEnabled(false);
+//        chart.getAxisRight().setEnabled(false);
+//        chart.getAxisLeft().setEnabled(false);
         chart.notifyDataSetChanged();
         chart.clear();
         chart.setData(lineData);
@@ -263,9 +263,9 @@ public class ChartHum extends Fragment {
     }
 
     private void selectTextView(TextView tvSelected, TextView tvUnselected1, TextView tvUnselected2) {
-        tvSelected.setBackground(getResources().getDrawable(R.drawable.bg_btn_selected));
-        tvUnselected1.setBackground(getResources().getDrawable(R.drawable.bg_btn_unselected));
-        tvUnselected2.setBackground(getResources().getDrawable(R.drawable.bg_btn_unselected));
+        tvSelected.setBackgroundResource(R.drawable.bg_btn_selected);
+        tvUnselected1.setBackgroundResource(R.drawable.bg_btn_unselected);
+        tvUnselected2.setBackgroundResource(R.drawable.bg_btn_unselected);
 
         tvSelected.setTextColor(getResources().getColor(R.color.green_strong));
         tvUnselected1.setTextColor(getResources().getColor(android.R.color.darker_gray));

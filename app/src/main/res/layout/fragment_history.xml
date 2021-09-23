@@ -38,7 +38,7 @@
         android:padding="3dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_back_round"
-        app:tint="@color/dark_icon" />
+        app:tint="@color/semiTransparent" />
 
     <ImageButton
         android:id="@+id/btn_next_round"
@@ -52,5 +52,5 @@
         android:padding="3dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_next_round"
-        app:tint="@color/dark_icon" />
+        app:tint="@color/semiTransparent" />
 </RelativeLayout>
