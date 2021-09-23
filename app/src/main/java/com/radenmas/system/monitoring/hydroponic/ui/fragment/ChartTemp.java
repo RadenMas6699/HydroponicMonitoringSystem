@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
@@ -27,8 +26,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.radenmas.system.R;
 import com.radenmas.system.monitoring.hydroponic.adapter.DataPoints;
-import com.radenmas.system.monitoring.hydroponic.adapter.MyMarkerView;
-import com.radenmas.system.monitoring.hydroponic.adapter.SelectTextView;
 
 import java.util.ArrayList;
 import java.util.Calendar;

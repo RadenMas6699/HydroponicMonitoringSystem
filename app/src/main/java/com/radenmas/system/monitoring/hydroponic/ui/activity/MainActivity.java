@@ -1,22 +1,16 @@
 package com.radenmas.system.monitoring.hydroponic.ui.activity;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.ImageButton;
-import android.widget.TextView;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.radenmas.system.R;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.HistoryFragment;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.HomeFragment;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.InfoFragment;
-
-import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
 

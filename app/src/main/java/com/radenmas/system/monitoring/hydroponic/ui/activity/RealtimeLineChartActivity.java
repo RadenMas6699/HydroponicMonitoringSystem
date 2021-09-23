@@ -3,14 +3,11 @@ package com.radenmas.system.monitoring.hydroponic.ui.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.Legend.LegendForm;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.components.YAxis.AxisDependency;
@@ -27,8 +24,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.radenmas.system.R;
 import com.radenmas.system.monitoring.hydroponic.adapter.DataPoints;
-
-import java.util.ArrayList;
 
 public class RealtimeLineChartActivity extends AppCompatActivity {
 
@@ -71,16 +66,6 @@ public class RealtimeLineChartActivity extends AppCompatActivity {
 //                        addData(dataPoints.getTime(),dataPoints.getTempRuang());
 
                         addEntry();
-
-
-
-
-
-
-
-
-
-
 
 
 //                        data.add(new Entry(dataPoints.getTime(), dataPoints.getTempRuang()));
