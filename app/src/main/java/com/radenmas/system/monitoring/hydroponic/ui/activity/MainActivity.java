@@ -1,7 +1,11 @@
 package com.radenmas.system.monitoring.hydroponic.ui.activity;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -22,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         titleActivity.setText("Monitoring Status");
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main, new HomeFragment()).commit();
+
+        if (checkInternet()) {
+            Toast.makeText(this, "Connect", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Disconnect", Toast.LENGTH_SHORT).show();
+        }
 
         BottomNavigationView navigationView = findViewById(R.id.nav_bottom);
 //        navigationView.setOnNavigationItemSelectedListener(item -> {
@@ -89,5 +99,20 @@ public class MainActivity extends AppCompatActivity {
             titleActivity.setText(title);
             getSupportFragmentManager().beginTransaction().replace(R.id.content_main, selectedFragment).commit();
         });
+    }
+
+    public boolean checkInternet() {
+        boolean connectStatus = true;
+        ConnectivityManager ConnectionManager = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            ConnectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        }
+        NetworkInfo networkInfo = ConnectionManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected() == true) {
+            connectStatus = true;
+        } else {
+            connectStatus = false;
+        }
+        return connectStatus;
     }
 }
