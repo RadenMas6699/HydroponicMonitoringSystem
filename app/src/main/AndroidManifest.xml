@@ -11,11 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HydroponicMonitoringSystem">
-        <activity
-            android:name=".monitoring.hydroponic.ui.activity.MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".monitoring.hydroponic.ui.activity.SplashActivity"
+        <activity android:name=".monitoring.hydroponic.ui.activity.RealtimeLineChartActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -23,6 +19,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".monitoring.hydroponic.ui.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".monitoring.hydroponic.ui.activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
         </activity>
     </application>
 

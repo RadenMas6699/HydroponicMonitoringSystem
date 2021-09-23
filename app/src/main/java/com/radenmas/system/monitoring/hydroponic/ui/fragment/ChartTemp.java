@@ -1,6 +1,5 @@
 package com.radenmas.system.monitoring.hydroponic.ui.fragment;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -20,7 +18,6 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.github.mikephil.charting.utils.Utils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.radenmas.system.R;
 import com.radenmas.system.monitoring.hydroponic.adapter.DataPoints;
 import com.radenmas.system.monitoring.hydroponic.adapter.MyMarkerView;
+import com.radenmas.system.monitoring.hydroponic.adapter.SelectTextView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -65,7 +63,8 @@ public class ChartTemp extends Fragment {
         initView(view);
         onClick();
 
-        selectTextView(tvDay, tvWeek, tvMonth);
+        SelectTextView select = new SelectTextView();
+        select.select(tvDay, tvWeek, tvMonth);
 
         switch (statusSortir) {
             case 0:
@@ -88,9 +87,11 @@ public class ChartTemp extends Fragment {
     }
 
     private void onClick() {
+        SelectTextView select = new SelectTextView();
+
         tvDay.setOnClickListener(view -> {
             statusSortir = 0;
-            selectTextView(tvDay, tvWeek, tvMonth);
+            select.select(tvDay, tvWeek, tvMonth);
             switch (statusSortir) {
                 case 0:
                     Graph(day);
@@ -106,7 +107,7 @@ public class ChartTemp extends Fragment {
         });
         tvWeek.setOnClickListener(view -> {
             statusSortir = 1;
-            selectTextView(tvWeek, tvDay, tvMonth);
+            select.select(tvWeek, tvDay, tvMonth);
             switch (statusSortir) {
                 case 0:
                     Graph(day);
@@ -122,7 +123,7 @@ public class ChartTemp extends Fragment {
         });
         tvMonth.setOnClickListener(view -> {
             statusSortir = 2;
-            selectTextView(tvMonth, tvWeek, tvDay);
+            select.select(tvMonth, tvWeek, tvDay);
             switch (statusSortir) {
                 case 0:
                     Graph(day);
@@ -179,12 +180,6 @@ public class ChartTemp extends Fragment {
         lineDataSet.setValues(data);
         lineDataSet.setLabel("DataSet 1");
         lineDataSet.setDrawFilled(true);
-        if (Utils.getSDKInt() >= 18) {
-            Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.fade_blue_light);
-            lineDataSet.setFillDrawable(drawable);
-        } else {
-            lineDataSet.setFillAlpha(5);
-        }
         lineDataSet.setLineWidth(1.5f);
         lineDataSet.setDrawValues(false);
         iLineDataSets.clear();
@@ -251,12 +246,12 @@ public class ChartTemp extends Fragment {
         YAxis yAxisL = chart.getAxis(YAxis.AxisDependency.LEFT);
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(false);
-        yAxisL.setAxisMinimum(0);
-        yAxisL.setAxisMaximum(40);
+        yAxisL.setAxisMinimum(15);
+        yAxisL.setAxisMaximum(45);
 
-        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
-        mv.setChartView(chart);
-        chart.setMarker(mv);
+//        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
+//        mv.setChartView(chart);
+//        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
         chart.getAxisRight().setEnabled(false);
@@ -268,13 +263,4 @@ public class ChartTemp extends Fragment {
         chart.moveViewTo(lineData.getEntryCount(), 50L, YAxis.AxisDependency.LEFT);
     }
 
-    private void selectTextView(TextView tvSelected, TextView tvUnselected1, TextView tvUnselected2) {
-        tvSelected.setBackground(getResources().getDrawable(R.drawable.bg_btn_selected));
-        tvUnselected1.setBackground(getResources().getDrawable(R.drawable.bg_btn_unselected));
-        tvUnselected2.setBackground(getResources().getDrawable(R.drawable.bg_btn_unselected));
-
-        tvSelected.setTextColor(getResources().getColor(R.color.green_strong));
-        tvUnselected1.setTextColor(getResources().getColor(android.R.color.darker_gray));
-        tvUnselected2.setTextColor(getResources().getColor(android.R.color.darker_gray));
-    }
 }

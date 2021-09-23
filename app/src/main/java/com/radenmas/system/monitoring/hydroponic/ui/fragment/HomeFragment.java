@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
                     Calendar cal = Calendar.getInstance(Locale.ENGLISH);
                     cal.setTimeInMillis(data.getTime() * 1000);
 
-                    String clock = DateFormat.format("HH:mm zz", cal).toString();
+                    String clock = DateFormat.format("HH:mm:ss zz", cal).toString();
                     String date = DateFormat.format("dd MMM yyyy", cal).toString();
 
                     valueClock.setText(clock);
@@ -85,11 +85,11 @@ public class HomeFragment extends Fragment {
                     wtr = data.getTempAir();
 
                     //buruk //baik //sedang //buruk
-                    setStatus(temp, 0, 20, 35, 37, 40, statusTemperature);
-                    setStatus(hum, 0, 70, 90, 96, 100, statusHumidity);
-                    setStatus(ph, 0, 5.5, 7.1, 8.1, 9, statusPH);
-                    setStatus(tds, 0, 100, 501, 1751, 2000, statusTDS);
-                    setStatus(wtr, 0, 18, 26, 28, 37, statusWater);
+                    setStatus(temp, 0.0, 20.0, 35.0, 37.0, 40.0, statusTemperature);
+                    setStatus(hum, 0.0, 70.0, 90.0, 96.0, 100.0, statusHumidity);
+                    setStatus(ph, 0.0, 5.5, 7.1, 8.1, 9.0, statusPH);
+                    setStatus(tds, 0.0, 100.0, 501.0, 1751.0, 2000.0, statusTDS);
+                    setStatus(wtr, 0.0, 18.0, 26.0, 28.0, 37.0, statusWater);
                 }
             }
 
@@ -103,19 +103,19 @@ public class HomeFragment extends Fragment {
     public void setStatus(float value, double i, double j, double k, double l, double m, TextView status) {
         if (value >= i && value < j) {
             //buruk
-            status.setBackground(getResources().getDrawable(R.drawable.bg_bad_status));
+            status.setBackgroundResource(R.drawable.bg_bad_status);
             status.setText(R.string.bad);
         } else if (value >= j && value < k) {
             //baik
-            status.setBackground(getResources().getDrawable(R.drawable.bg_good_status));
+            status.setBackgroundResource(R.drawable.bg_good_status);
             status.setText(R.string.good);
         } else if (value >= k && value < l) {
             //medium
-            status.setBackground(getResources().getDrawable(R.drawable.bg_medium_status));
+            status.setBackgroundResource(R.drawable.bg_medium_status);
             status.setText(R.string.medium);
         } else if (value >= l && value <= m) {
             //buruk
-            status.setBackground(getResources().getDrawable(R.drawable.bg_bad_status));
+            status.setBackgroundResource(R.drawable.bg_bad_status);
             status.setText(R.string.bad);
         }
     }

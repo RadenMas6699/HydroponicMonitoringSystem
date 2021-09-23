@@ -179,12 +179,6 @@ public class ChartTDS extends Fragment {
         lineDataSet.setValues(data);
         lineDataSet.setLabel("DataSet 1");
         lineDataSet.setDrawFilled(true);
-        if (Utils.getSDKInt() >= 18) {
-            Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.fade_blue_light);
-            lineDataSet.setFillDrawable(drawable);
-        } else {
-            lineDataSet.setFillAlpha(5);
-        }
         lineDataSet.setLineWidth(1.5f);
         lineDataSet.setDrawValues(false);
         iLineDataSets.clear();
@@ -254,9 +248,9 @@ public class ChartTDS extends Fragment {
         yAxisL.setAxisMinimum(0);
         yAxisL.setAxisMaximum(2000);
 
-        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
-        mv.setChartView(chart);
-        chart.setMarker(mv);
+//        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
+//        mv.setChartView(chart);
+//        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
         chart.getAxisRight().setEnabled(false);
