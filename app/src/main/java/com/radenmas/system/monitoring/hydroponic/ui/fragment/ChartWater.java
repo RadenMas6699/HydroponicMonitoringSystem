@@ -244,7 +244,7 @@ public class ChartWater extends Fragment {
 
         YAxis yAxisL = chart.getAxis(YAxis.AxisDependency.LEFT);
         yAxisL.setDrawGridLines(false);
-        yAxisL.setDrawLabels(false);
+        yAxisL.setDrawLabels(true);
         yAxisL.setAxisMinimum(0);
         yAxisL.setAxisMaximum(37);
 
@@ -253,7 +253,7 @@ public class ChartWater extends Fragment {
 //        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
-//        chart.getAxisRight().setEnabled(false);
+        chart.getAxisRight().setEnabled(false);
 //        chart.getAxisLeft().setEnabled(false);
         chart.notifyDataSetChanged();
         chart.clear();

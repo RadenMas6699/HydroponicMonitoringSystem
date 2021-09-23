@@ -243,7 +243,7 @@ public class ChartTemp extends Fragment {
 
         YAxis yAxisL = chart.getAxis(YAxis.AxisDependency.LEFT);
         yAxisL.setDrawGridLines(false);
-        yAxisL.setDrawLabels(false);
+        yAxisL.setDrawLabels(true);
         yAxisL.setAxisMinimum(15);
         yAxisL.setAxisMaximum(45);
 
@@ -252,7 +252,7 @@ public class ChartTemp extends Fragment {
 //        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
-//        chart.getAxisRight().setEnabled(false);
+        chart.getAxisRight().setEnabled(false);
 //        chart.getAxisLeft().setEnabled(false);
         chart.notifyDataSetChanged();
         chart.clear();
