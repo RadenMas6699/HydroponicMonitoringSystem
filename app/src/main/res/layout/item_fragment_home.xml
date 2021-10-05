@@ -38,12 +38,8 @@
                     <TextView
                         android:id="@+id/value_temperature"
                         style="@style/value_item"
-                        android:layout_below="@id/title_temperature"
                         android:text="@string/dash" />
 
-                    <TextView
-                        android:id="@+id/status_temperature"
-                        style="@style/status_item" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -69,12 +65,8 @@
                     <TextView
                         android:id="@+id/value_humidity"
                         style="@style/value_item"
-                        android:layout_below="@id/title_humidity"
                         android:text="@string/dash" />
 
-                    <TextView
-                        android:id="@+id/status_humidity"
-                        style="@style/status_item" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -108,12 +100,8 @@
                     <TextView
                         android:id="@+id/value_ph"
                         style="@style/value_item"
-                        android:layout_below="@id/title_ph"
                         android:text="@string/dash" />
 
-                    <TextView
-                        android:id="@+id/status_ph"
-                        style="@style/status_item" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -139,12 +127,8 @@
                     <TextView
                         android:id="@+id/value_tds"
                         style="@style/value_item"
-                        android:layout_below="@id/title_tds"
                         android:text="@string/dash" />
 
-                    <TextView
-                        android:id="@+id/status_tds"
-                        style="@style/status_item"/>
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -178,12 +162,8 @@
                     <TextView
                         android:id="@+id/value_water"
                         style="@style/value_item"
-                        android:layout_below="@id/title_water"
                         android:text="@string/dash" />
 
-                    <TextView
-                        android:id="@+id/status_water"
-                        style="@style/status_item"/>
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
