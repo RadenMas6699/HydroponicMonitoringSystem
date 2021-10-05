@@ -11,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.radenmas.system.R;
+
+import com.radenmas.system.monitoring.hydroponic.R;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.HistoryFragment;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.HomeFragment;
 import com.radenmas.system.monitoring.hydroponic.ui.fragment.InfoFragment;

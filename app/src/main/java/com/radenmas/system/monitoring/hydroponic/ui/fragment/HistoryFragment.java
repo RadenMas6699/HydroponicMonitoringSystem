@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.radenmas.system.R;
+import com.radenmas.system.monitoring.hydroponic.R;
 
 public class HistoryFragment extends Fragment {
     TextView nameChart;

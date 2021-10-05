@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import com.radenmas.system.R;
+import com.radenmas.system.monitoring.hydroponic.R;
 
 
 public class InfoFragment extends Fragment {

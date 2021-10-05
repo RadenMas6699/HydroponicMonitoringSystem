@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.radenmas.system.R;
+import com.radenmas.system.monitoring.hydroponic.R;
 
 public class SplashActivity extends AppCompatActivity {
 
