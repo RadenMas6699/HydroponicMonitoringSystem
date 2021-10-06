@@ -27,7 +27,7 @@ import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
-    private DatabaseReference dbReff;
+    private DatabaseReference dbReff, dbTime;
     private TextView valueDate, valueClock, valueTemperature, valueHumidity, valueTDS, valueWater, valuePH;
 
     public HomeFragment() {
@@ -47,6 +47,30 @@ public class HomeFragment extends Fragment {
     }
 
     private void getData() {
+        //getTime
+        dbTime = FirebaseDatabase.getInstance().getReference("timestamp");
+        dbTime.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                String times = snapshot.getValue().toString();
+                Long timesL = Long.parseLong(times);
+                Calendar cal = Calendar.getInstance(Locale.getDefault());
+                cal.setTimeInMillis(timesL);
+
+                String clock = DateFormat.format("HH:mm zz", cal).toString();
+                String date = DateFormat.format("dd MMM yyyy", cal).toString();
+
+                valueClock.setText(clock);
+                valueDate.setText(date);
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+
+
         dbReff = FirebaseDatabase.getInstance().getReference("hydroponic");
         Query lastUpdate = dbReff.orderByKey().limitToLast(1);
         lastUpdate.addValueEventListener(new ValueEventListener() {
@@ -54,16 +78,6 @@ public class HomeFragment extends Fragment {
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     DataPoints data = dataSnapshot.getValue(DataPoints.class);
-
-                    Calendar cal = Calendar.getInstance(Locale.ENGLISH);
-                    cal.setTimeInMillis(data.getTime() * 1000);
-
-                    String clock = DateFormat.format("HH:mm zz", cal).toString();
-                    String date = DateFormat.format("dd MMM yyyy", cal).toString();
-
-                    valueClock.setText(clock);
-                    valueDate.setText(date);
-
                     DecimalFormat koma = new DecimalFormat("#.##");
 
                     valueTemperature.setText("" + data.getTempRuang() + "\u2103");

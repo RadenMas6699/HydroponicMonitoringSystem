@@ -57,7 +57,8 @@
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/chartTemp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp" />
     </LinearLayout>
 
 </FrameLayout>
