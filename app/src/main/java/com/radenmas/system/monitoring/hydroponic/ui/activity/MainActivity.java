@@ -35,28 +35,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         BottomNavigationView navigationView = findViewById(R.id.nav_bottom);
-//        navigationView.setOnNavigationItemSelectedListener(item -> {
-//            Fragment selectedFragment = null;
-//            String title = null;
-//
-//            switch (item.getItemId()) {
-//                case R.id.menu_home:
-//                    selectedFragment = new HomeFragment();
-//                    title = "Monitoring Status";
-//                    break;
-//                case R.id.menu_history:
-//                    selectedFragment = new HistoryFragment();
-//                    title = "History";
-//                    break;
-//                case R.id.menu_info:
-//                    selectedFragment = new InfoFragment();
-//                    title = "Info App";
-//                    break;
-//            }
-//            titleActivity.setText(title);
-//            getSupportFragmentManager().beginTransaction().replace(R.id.content_main, selectedFragment).commit();
-//            return true;
-//        });
         navigationView.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             String title = null;

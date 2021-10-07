@@ -198,7 +198,7 @@ public class ChartWater extends Fragment {
                     @Override
                     public String getFormattedValue(float value) {
                         long longtime = (long) value;
-                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        Calendar cal = Calendar.getInstance(Locale.getDefault());
                         cal.setTimeInMillis(longtime * 1000);
                         String s = DateFormat.format("HH:mm", cal).toString();
                         return s;
@@ -213,7 +213,7 @@ public class ChartWater extends Fragment {
                     @Override
                     public String getFormattedValue(float value) {
                         long longtime = (long) value;
-                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        Calendar cal = Calendar.getInstance(Locale.getDefault());
                         cal.setTimeInMillis(longtime * 1000);
                         String s = DateFormat.format("dd MMM", cal).toString();
                         return s;
@@ -228,7 +228,7 @@ public class ChartWater extends Fragment {
                     @Override
                     public String getFormattedValue(float value) {
                         long longtime = (long) value;
-                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        Calendar cal = Calendar.getInstance(Locale.getDefault());
                         cal.setTimeInMillis(longtime * 1000);
                         String s = DateFormat.format("dd MMM", cal).toString();
                         return s;
@@ -242,7 +242,7 @@ public class ChartWater extends Fragment {
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(true);
         yAxisL.setAxisMinimum(0);
-        yAxisL.setAxisMaximum(37);
+        yAxisL.setAxisMaximum(40);
 
 //        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
 //        mv.setChartView(chart);

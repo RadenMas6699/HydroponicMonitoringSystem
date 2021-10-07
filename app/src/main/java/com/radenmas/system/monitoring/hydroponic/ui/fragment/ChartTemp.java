@@ -26,6 +26,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.radenmas.system.monitoring.hydroponic.R;
 import com.radenmas.system.monitoring.hydroponic.adapter.DataPoints;
+import com.radenmas.system.monitoring.hydroponic.adapter.MyMarkerView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -198,7 +199,7 @@ public class ChartTemp extends Fragment {
                     @Override
                     public String getFormattedValue(float value) {
                         long longtime = (long) value;
-                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        Calendar cal = Calendar.getInstance(Locale.getDefault());
                         cal.setTimeInMillis(longtime * 1000);
                         String s = DateFormat.format("HH:mm", cal).toString();
                         return s;
@@ -213,7 +214,7 @@ public class ChartTemp extends Fragment {
                     @Override
                     public String getFormattedValue(float value) {
                         long longtime = (long) value;
-                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        Calendar cal = Calendar.getInstance(Locale.getDefault());
                         cal.setTimeInMillis(longtime * 1000);
                         String s = DateFormat.format("dd MMM", cal).toString();
                         return s;
@@ -228,7 +229,7 @@ public class ChartTemp extends Fragment {
                     @Override
                     public String getFormattedValue(float value) {
                         long longtime = (long) value;
-                        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                        Calendar cal = Calendar.getInstance(Locale.getDefault());
                         cal.setTimeInMillis(longtime * 1000);
                         String s = DateFormat.format("dd MMM", cal).toString();
                         return s;
