@@ -26,6 +26,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.radenmas.system.monitoring.hydroponic.R;
 import com.radenmas.system.monitoring.hydroponic.adapter.DataPoints;
+import com.radenmas.system.monitoring.hydroponic.adapter.MyMarkerView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -157,11 +158,8 @@ public class ChartHum extends Fragment {
                     }
                     showChart(data);
                     lineDataSet.setDrawCircles(false);
-                    chart.invalidate();
-                } else {
-                    chart.clear();
-                    chart.invalidate();
                 }
+                chart.invalidate();
             }
 
             @Override
@@ -242,7 +240,7 @@ public class ChartHum extends Fragment {
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(true);
         yAxisL.setAxisMinimum(0);
-        yAxisL.setAxisMaximum(100);
+        yAxisL.setAxisMaximum(110);
 
 //        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
 //        mv.setChartView(chart);

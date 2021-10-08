@@ -12,9 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HydroponicMonitoringSystem">
-        <activity android:name=".ui.activity.RealtimeLineChartActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.MainActivity"
             android:screenOrientation="portrait" />

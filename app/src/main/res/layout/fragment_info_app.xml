@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="90dp">
+    android:layout_marginTop="100dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -121,6 +121,7 @@
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="@string/years"
+                    android:layout_marginBottom="42dp"
                     android:textStyle="bold" />
             </LinearLayout>
 

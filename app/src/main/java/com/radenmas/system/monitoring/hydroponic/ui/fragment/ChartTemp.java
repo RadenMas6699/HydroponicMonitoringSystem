@@ -158,11 +158,8 @@ public class ChartTemp extends Fragment {
                     }
                     showChart(data);
                     lineDataSet.setDrawCircles(false);
-                    chart.invalidate();
-                } else {
-                    chart.clear();
-                    chart.invalidate();
                 }
+                chart.invalidate();
             }
 
             @Override
@@ -243,7 +240,7 @@ public class ChartTemp extends Fragment {
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(true);
         yAxisL.setAxisMinimum(15);
-        yAxisL.setAxisMaximum(45);
+        yAxisL.setAxisMaximum(50);
 
 //        MyMarkerView mv = new MyMarkerView(getActivity(), R.layout.custom_marker_view);
 //        mv.setChartView(chart);
