@@ -7,6 +7,14 @@
     tools:context=".ui.activity.SplashActivity">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingHorizontal="32dp"
+        android:src="@drawable/ic_unm"
+        app:tint="@color/white_icon" />
+
+    <ImageView
         android:id="@+id/imgSplash"
         android:layout_width="72dp"
         android:layout_height="72dp"
@@ -26,11 +34,12 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <ProgressBar
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="24dp"
+        android:text="@string/carlos_name" />
 
 </RelativeLayout>

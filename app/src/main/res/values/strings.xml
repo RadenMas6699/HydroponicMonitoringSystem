@@ -17,4 +17,5 @@
     <string name="bad">Buruk</string>
     <string name="medium">Sedang</string>
     <string name="good">Baik</string>
+    <string name="desc">Aplikasi ini dikembangkan oleh Karolus Karen, mahasiswa Pendidikan Teknik Elektro angkatan 2017, dengan bantuan Pembimbing yaitu Bapak Zulhaji, S.T., M.T. dan Ibu Dr. Ir. Riana T. Mangesa M.T. Aplikasi ini berlaku hanya untuk monontoring kondisi tanaman hidroponik. Pengembangan alat dan aplikasi ini bertujuan untuk membantu petani dalam proses merawat tanaman hidroponik sehingga pekerjaan petani menjadi lebih mudah dan efektif.</string>
 </resources>
