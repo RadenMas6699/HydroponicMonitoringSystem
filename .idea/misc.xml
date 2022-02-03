@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/activity_realtime_linechart.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/custom_marker_view.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/fragment_chart.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/fragment_history.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/fragment_info_app.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/HydroponicMonitoringSystem/app/src/main/res/layout/item_fragment_home.xml" value="0.25" />
       </map>

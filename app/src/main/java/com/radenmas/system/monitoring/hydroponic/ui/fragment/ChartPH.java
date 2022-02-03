@@ -242,9 +242,6 @@ public class ChartPH extends Fragment {
         yAxisL.setAxisMinimum(1);
         yAxisL.setAxisMaximum(12);
 
-//        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
-//        mv.setChartView(chart);
-//        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
         chart.getAxisRight().setEnabled(false);

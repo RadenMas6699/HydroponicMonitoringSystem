@@ -242,9 +242,6 @@ public class ChartTDS extends Fragment {
         yAxisL.setAxisMinimum(0);
         yAxisL.setAxisMaximum(2000);
 
-//        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
-//        mv.setChartView(chart);
-//        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
         chart.getAxisRight().setEnabled(false);

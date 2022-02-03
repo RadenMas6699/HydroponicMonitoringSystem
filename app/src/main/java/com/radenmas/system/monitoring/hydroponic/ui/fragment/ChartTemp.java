@@ -242,9 +242,6 @@ public class ChartTemp extends Fragment {
         yAxisL.setAxisMinimum(15);
         yAxisL.setAxisMaximum(50);
 
-//        MyMarkerView mv = new MyMarkerView(getActivity(), R.layout.custom_marker_view);
-//        mv.setChartView(chart);
-//        chart.setMarker(mv);
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
         chart.getAxisRight().setEnabled(false);
